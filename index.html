@@ -1,0 +1,189 @@
+ <!DOCTYPE html>
+ <html>
+ <head>
+
+     <title>Page Title</title>
+     <link rel='stylesheet' type='text/css' media='screen' href='style.css'>
+ </head>
+ <body>
+  <nav id="navbar">
+    <header style="color: black ;">GIT Documentation</header>
+    <ul style="background-color:honeydew">
+      <li><a class="nav-link" href="#sec1">Configuring Git</a></li>
+      <li>
+        <a class="nav-link" href="#sec2">Creating Git Repository</a>
+      </li>
+      <li><a class="nav-link" href="#sec3">Creating and Editing Files</a></li>
+      <li><a class="nav-link" href="#sec4">Adding files to your Git repository</a></li>
+      <li>
+        <a class="nav-link" href="#sec5">Finding out what’s happening</a>
+      </li>
+      <li><a class="nav-link" href="#sec6">Making changes and tracking them</a></li>
+      <li><a class="nav-link" href="#sec7">Synchronizing your local Git repository with GitHub</a></li>
+      <li>
+        <a class="nav-link" href="#sec8">Deleting and renaming files</a>
+      </li>
+      <li><a class="nav-link" href="#sec9">Undoing changes</a></li>
+      <li>
+        <a class="nav-link" href="#sec10"
+          > Branching</a
+        >
+      </li>
+    </ul>
+  </nav>
+
+
+
+  <main id="main-doc">
+    <section class="main-section" >
+      <img src="git1.png" alt="...">
+      <header>Introduction</header>
+      <article>
+        <p>
+          By far, the most widely used modern version control system in the world today is Git. Git is a mature, actively maintained open source project originally developed in 2005 by Linus Torvalds, the famous creator of the Linux operating system kernel. A staggering number of software projects rely on Git for version control, including commercial projects as well as open source. Developers who have worked with Git are well represented in the pool of available software development talent and it works well on a wide range of operating systems and IDEs (Integrated Development Environments).
+          Having a distributed architecture, Git is an example of a DVCS (hence Distributed Version Control System). Rather than have only one single place for the full version history of the software as is common in once-popular version control systems like CVS or Subversion (also known as SVN), in Git, every developer's working copy of the code is also a repository that can contain the full history of all changes.
+          In addition to being distributed, Git has been designed with performance, security and flexibility in mind.
+        </p>
+  
+        <p>
+          The raw performance characteristics of Git are very strong when compared to many alternatives. Committing new changes, branching, merging and comparing past versions are all optimized for performance. The algorithms implemented inside Git take advantage of deep knowledge about common attributes of real source code file trees, how they are usually modified over time and what the access patterns are.
+        </p>
+       
+      </article>
+    </section>
+
+
+    <section class="main-section" id="sec1" >
+      <header>Configuring Git</header>
+      <article>
+        <p>You need to type two lines to configure Git and link it to GitHub. In the following commands:</p>
+         <ul>
+          <li>Replace USERNAME with the username that you created on GitHub</li>
+          <li>ReplaceEMAILwithyouremailaddress</li>
+          <li>git config --global user.name "USERNAME"<br>
+            git config --global user.email "EMAIL" </li>
+         </ul> 
+      </article>
+    </section>
+
+
+    <section class="main-section" id="sec2">
+      <header>Creating Git Repository</header>
+      <article>
+        <p>
+          When you use Git, you create one repository for each program or project that you work on. I suggest that you create all your Git repositories under a single directory called git
+        </p>
+        <ul>
+        <li>cd ~/git<br>
+          mkdir GitExercise<br>
+          cd GitExercise</li>
+        </ul>
+        <img src="git2.png">
+      </article>
+    </section>
+
+    <section class="main-section" id="sec3">
+      <header>Creating and Editing Files</header>
+      <article>
+        A text editor is a program that allows you to create and edit a simple plain text file. Things like Word allow you to embed information about fonts, font-size, colour, bold, italics, etc. A text editor simply deals with the plain characters — some text editors may display text in colour while you are working on it (for example to highlight syn- tax while writing a computer program) but this information is not saved. Under Win- dows, you can use NotePad (ensure you save as a ‘plain ASCII text file’), but other freely-available editors include Atom and vim (also known as vi). On the Mac, choices include TextEdit or vim.
+        vim is built into the git-bash environment, but is rather old-fashioned and not easy to use — its advantage is it is available in every unix-like environment and lots of prgrammers really like it because it is very fast to start and pretty powerful. It is also the default editor that Git will use if it expects you to provide information about a change you have made2. vim has a ‘command mode’ and a ‘text-entry mode’. When vim starts, it will be in command mode. To add text, move around using the arrow keys. To start entering text at the cursor, press the i key (for insert) and start typing.
+        When you are done press the Esc key to return to command mode. To exit the editor, press Esc to ensure you are in command mode, then type :wq Table 1 summarizes the most useful commands.
+      </article>
+    </section>
+
+    <section class="main-section" id="sec4">
+      <header>Adding files to your Git repository</header>
+      <ul>
+        <li>git add proteins.txt </li>
+      </ul>
+      <p>You only need to do this when you have a new file that you want to track with Git. Having specified that the file should be tracked, we need to tell Git that we have
+        made changes to the file that we want it to record:</p>
+        <ul>
+          <li>git commit -a -m "Initial version" </li>
+        </ul>
+    </section>
+
+    <section class="main-section" id="sec5">
+      <header>Finding out what’s happening</header>
+      <article>
+        <p>
+          To find out whether there are any files that are not being tracked by Git or whether there are files that are being tracked that haven’t been committed:
+        </p>
+        <ul>
+          <li>git status </li>
+          <li>git log </li>
+        </ul>
+      </article>
+    </section>
+
+
+    <section class="main-section" id="sec6">
+      <header>Making changes and tracking them</header>
+      <article>
+        <ul>
+          <li>git commit -a -m "Added information on PFKM" </li>
+          <li>git log </li>
+        </ul>
+      </article>
+    </section>
+
+    <section class="main-section" id="sec7">
+      <header>Synchronizing your local Git repository with GitHub</header>
+      <article>
+        <p>To synchronize your local repository with GitHub, proceed as follows:</p>
+        <ul>
+          <li>Go to the GitHub.com web site and make sure you are logged in, </li>
+          <li>In the top right corner, you should find a + sign. Click this and then click New repository,
+          </li>
+          <li>Enter the name of your repository  </li>
+          <li>Add a description of your repository — something like “Git Exercise”, </li>
+          <li>Do not select the option to “Initialize this repository with a README”,</li>
+        </ul> 
+       <p>These steps have created an empty repository on GitHub; you now need to syn- chronize your local repository with this.</p> 
+      </article>
+    </section>
+
+    <section class="main-section" id="sec8">
+      <header>Deleting and renaming files</header>
+      <article>
+        <p>Normally you would delete a file with rm and rename or move a file using mv. How- ever, we also need to tell Git that we have deleted, renamed or moved a file. To do that we have to remember to delete, rename or move the file via Git.
+          Do not do this now, but if, for example, we wished to rename our proteins.txt file to proteininfo.txt we would do:</p>
+        <ul>
+          <li>git mv proteins.txt proteininfo.txt </li>
+          <li>Similarly to delete a file and stop Git from tracking it we would do:
+            git rm proteins.txt </li>
+        </ul> 
+      </article>
+    </section>
+
+    <section class="main-section" id="sec9">
+      <header>Undoing changes</header>
+      <article>
+        <p>Let’s add something else to the proteins.txt file, but something that was clearly a mistake.
+          If you now type git status you will be told that the file has been changed, but that you haven’t committed the changes yet. At this stage, you can go back to the version without the changes:</p>
+        <ul>
+          <li>git checkout -- proteins.txt<br>
+            cat proteins.txt </li>
+        </ul> 
+        <p>As you will see, the file has reverted back to what it was before you added the lines. If you have modified more than one file and want to reset everything to the last
+          commit, you can also do
+          git reset --hard
+          to reset all the files.</p>
+          <p>Suppose however that you have committed a change and now want to undo that change and revert to the previous version. You will recall that when you use git log you are shown the comments, but also shown lines saying commit with some appar- ently random set of letters and numbers. This is an identifier for a particular commit. We can use git revert with one of these identifiers to remove the changhed that happened in that commit. In practice, you only need about the first 6 or 7 characters of the commit identifier to identify a particular commit uniquely.
+            Again add something to the proteins.txt file that we will clearly wish to undo.</p>
+      </article>
+    </section>
+
+    <section class="main-section" id="sec10">
+      <header>Branching</header>
+      <article>
+        <p>Often we find that we have a version of a program (or script) that we are happy with, but we want to add some new feature(s). Whenever we make changes we risk break- ing the existing version. Git allows us to create experimental ‘branches’ where we can develop new features before merging them back into the master repository.
+          This is also useful when we have multiple people working on a project. Each per- son creates a branch for the feature or bug-fix they are working on and when they are finished they merge it back into the master branch.
+          Suppose we want to modify our proteins file to include the length of each protein. Adding that extra field to the file might well break some program that relied on the file, so we will do it in a new branch called ‘protlength’.
+          We create a new branch using
+          git checkout -b branchname</p>
+      </article>
+    </section>
+    </main>
+</body>
+</html>
